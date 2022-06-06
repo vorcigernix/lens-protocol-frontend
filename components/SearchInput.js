@@ -1,31 +1,16 @@
-import { css } from '@emotion/css'
-
 export function SearchInput({
-  placeholder, onChange, value, onKeyDown = null
+	placeholder,
+	onChange,
+	value,
+	onKeyDown = null,
 }) {
-  return (
-    <input
-      placeholder={placeholder}
-      onChange={onChange}
-      value={value}
-      className={inputStyle}
-      onKeyDown={onKeyDown}
-    />
-  )
+	return (
+		<input
+			placeholder={placeholder}
+			onChange={onChange}
+			value={value}
+			className='outline-none py-4 px-5 text-base rounded-3xl border-2 border-slate-200 bg-slate-50 w-80 transition-all focus:bg-white focus:border-slate-300'
+			onKeyDown={onKeyDown}
+		/>
+	);
 }
-
-const inputStyle = css`
-  outline: none;
-  border: none;
-  padding: 15px 20px;
-  font-size: 16px;
-  border-radius: 25px;
-  border: 2px solid rgba(0, 0, 0, .04);
-  transition: all .4s;
-  width: 300px;
-  background-color: #fafafa;
-  &:focus {
-    background-color: white;
-    border: 2px solid rgba(0, 0, 0, .1);
-  }
-`

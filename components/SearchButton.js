@@ -1,33 +1,9 @@
-import { css } from '@emotion/css'
-
-export function SearchButton({
-  buttonText,
-  onClick
-}) {
-  return (
-    <button
-      className={buttonStyle}
-      onClick={onClick}
-    >{buttonText}</button>
-  )
+export function SearchButton({ buttonText, onClick }) {
+	return (
+		<button
+			className='border-none outline-none ml-4 text-fuchsia-900 p-4 rounded-3xl cursor-pointer text-sm font-medium bg-fuchsia-400 w-60 tracking-tight hover:opacity-70 transition-opacity'
+			onClick={onClick}>
+			{buttonText}
+		</button>
+	);
 }
-
-const buttonStyle = css`
-border: none;
-outline: none;
-margin-left: 15px;
-background-color: black;
-color: #340036;
-padding: 17px;
-border-radius: 25px;
-cursor: pointer;
-font-size: 14px;
-font-weight: 500;
-background-color: rgb(249, 92, 255);
-transition: all .35s;
-width: 240px;
-letter-spacing: .75px;
-&:hover {
-  background-color: rgba(249, 92, 255, .75);
-}
-`
