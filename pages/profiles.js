@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useState, useEffect } from "react";
 import {
 	createClient,
@@ -74,8 +75,8 @@ export default function Home() {
 	}
 
 	return (
-		<div className={containerStyle}>
-			<div className={searchContainerStyle}>
+		<div className='w-[900px] mx-auto pb-12'>
+			<div className='pt-10 pb-8'>
 				<SearchInput
 					placeholder='Search'
 					onChange={(e) => setSearchString(e.target.value)}
@@ -84,31 +85,30 @@ export default function Home() {
 				/>
 				<SearchButton onClick={searchForProfile} buttonText='SEARCH PROFILES' />
 			</div>
-			<div className={listItemContainerStyle}>
+			<div className='flex flex-col'>
 				{loadingState === "loading" && <Placeholders number={6} />}
 				{profiles.map((profile, index) => (
 					<Link href={`/profile/${profile.id}`} key={index}>
 						<a>
-							<div className={listItemStyle}>
-								<div className={profileContainerStyle}>
+							<div className='bg-white mt-3 rounded-xl border p-5'>
+								<div className='flex flex-row'>
 									{profile.picture && profile.picture.original ? (
-										<Image
+										<img
 											src={profile.picture.original.url}
-											className={profileImageStyle}
-											width='42px'
-											height='42px'
+											className='w-12 h-12 rounded-full'
+											alt="profile's avatar"
 										/>
 									) : (
 										<div className='' />
 									)}
 
-									<div className={profileInfoStyle}>
-										<h3 className={nameStyle}>{profile.name}</h3>
-										<p className={handleStyle}>{profile.handle}</p>
+									<div className='ml-3'>
+										<h3 className='mb-1'>{profile.name}</h3>
+										<p className='mb-1 text-fuchsia-700'>{profile.handle}</p>
 									</div>
 								</div>
 								<div>
-									<p className={latestPostStyle}>
+									<p className='mt-6 mb-1'>
 										{trimString(profile.publication?.metadata.content, 200)}
 									</p>
 								</div>
