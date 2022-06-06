@@ -1,3 +1,6 @@
+# Differences from Nader original:
+Removed emotion css in favor of latest Tailwind
+
 # Lens Protocol Front End Starter
 
 This is an example of how to build a front-end application on top of [Lens Protocol](https://docs.lens.xyz/docs).
